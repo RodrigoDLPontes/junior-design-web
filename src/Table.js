@@ -1,10 +1,22 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import * as firebase from 'firebase';
+
+import 'firebase/auth';
+import 'firebase/database';
 
 const checkmark = String.fromCharCode(10004);
 
 const columns = [
+  // {
+  //   Header: "Address",
+  //   accessor: "Address"
+  // },
+  // {
+  //   Header: "Time",
+  //   accessor: "time"
+  // },
   {
     Header: "Address",
     accessor: "address",
@@ -186,15 +198,7 @@ class Table extends React.Component {
   state = { data: [] }
 
   componentDidMount() {
-    // Get reports from DB (probably using fetch())
-    // Then set state like below
-    this.setState({data: [
-      {
-        address: "123 Techwood Dr",
-        time: "12:34 PM",
-        category: "Broken Window"
-      }
-    ]})
+    this.fetchData();
   }
 
   render() {
