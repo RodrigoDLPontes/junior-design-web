@@ -16,10 +16,15 @@ class Map extends React.Component {
     )
   }
 
-  renderMarkers = ({map, maps}) => {
-    // Get reports from DB (probably using fetch())
-    // For each report, create a marker like below
-    new maps.Marker({position: {lat: 36.9339, lng: -76.3637}, map});
+  renderMarkers = ({map, maps}) => this.fetchData(map, maps);
+
+  async fetchData(map, maps) {
+    const data = await this.props.firebase.database().ref('/reports').once('value');
+    const dataArr = Object.values(data.val());
+    dataArr.forEach(report => {
+      const { latitude: lat, longitude: lng } = report.location;
+      new maps.Marker({position: {lat, lng}, map})
+    });
   }
 }
 

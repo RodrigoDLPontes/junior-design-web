@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# google maps api key
+# api keys
 GoogleMapsKey.js
+FirebaseKey.js
