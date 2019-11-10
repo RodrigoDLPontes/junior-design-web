@@ -23,12 +23,22 @@ code {
   font-size: 4em;
 }
 
+.login form {
+  margin-bottom: 10px;
+}
+
 .login input {
   font-size: 1.5em;
 }
 
+.login p {
+  color: red;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
 .login button {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .map {
