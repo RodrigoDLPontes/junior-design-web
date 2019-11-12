@@ -13,14 +13,18 @@ class Login extends React.Component {
     return (
       <div className="login">
         <h1>Log In</h1>
-        <form>
-          <input type="text" placeholder="Email" value={this.state.email} onChange={this.emailOnChange} />
-        </form>
-        <form>
-          <input type="password" placeholder="Password" value={this.state.password} onChange={this.passwordOnChange} />
-        </form>
-        {this.state.errorOccured && <p>Invalid email and/or password</p>}
-        <button onClick={this.submitOnClick}>Submit</button>
+        <div style={{textAlign: 'center'}}>
+          <form onSubmit={this.submitOnClick}>
+            <input type="text" placeholder="Email" value={this.state.email} onChange={this.emailOnChange} />
+            <br />
+            <br />
+            <input type="password" placeholder="Password" value={this.state.password} onChange={this.passwordOnChange} />
+            <br />
+            {this.state.errorOccured && <p>Invalid email and/or password</p> }
+            <br />
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
       </div>
     );
   }
@@ -29,7 +33,10 @@ class Login extends React.Component {
 
   passwordOnChange = (event) => this.setState({ password: event.target.value });
 
-  submitOnClick = () => this.login();
+  submitOnClick = (e) => {
+    e.preventDefault();
+    this.login();
+  };
 
   async login() {
     const email = this.state.email;
