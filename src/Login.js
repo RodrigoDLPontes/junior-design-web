@@ -13,18 +13,12 @@ class Login extends React.Component {
     return (
       <div className="login">
         <h1>Log In</h1>
-        <div style={{textAlign: 'center'}}>
-          <form onSubmit={this.submitOnClick}>
-            <input type="text" placeholder="Email" value={this.state.email} onChange={this.emailOnChange} />
-            <br />
-            <br />
-            <input type="password" placeholder="Password" value={this.state.password} onChange={this.passwordOnChange} />
-            <br />
-            {this.state.errorOccured && <p>Invalid email and/or password</p> }
-            <br />
-            <input type="submit" value="Submit"/>
-          </form>
-        </div>
+        <form onSubmit={this.submitOnClick}>
+          <input type="text" placeholder="Email" value={this.state.email} onChange={this.emailOnChange} className="text" />
+          <input type="password" placeholder="Password" value={this.state.password} onChange={this.passwordOnChange} className="text" />
+          {this.state.errorOccured && (<p className="error">Invalid email and/or password</p>)}
+          <input type="submit" value="Submit" className="submit"/>
+        </form>
       </div>
     );
   }
