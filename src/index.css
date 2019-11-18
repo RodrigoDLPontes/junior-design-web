@@ -24,7 +24,24 @@ code {
 }
 
 .login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login form input.text{
+  margin-bottom: 15px;
+}
+
+.login form input.submit{
+  align-self: center;
+  width: 50%;
+}
+
+.login form .error{
+  margin-top: 0;
   margin-bottom: 10px;
+  align-self: center;
 }
 
 .login input {
