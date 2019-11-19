@@ -9,14 +9,6 @@ import 'firebase/database';
 const checkmark = String.fromCharCode(10004);
 
 const columns = [
-  // {
-  //   Header: "Address",
-  //   accessor: "Address"
-  // },
-  // {
-  //   Header: "Time",
-  //   accessor: "time"
-  // },
   {
     Header: "Address",
     accessor: "address",
