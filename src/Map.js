@@ -1,6 +1,7 @@
 import React from 'react';
 import { withGoogleMap, withScriptjs, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import key from './GoogleMapsKey';
+import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
 
 const labels = {
   "address": "Address",
@@ -63,12 +64,30 @@ class Map extends React.Component {
     )
   }
 
+  onMarkerClustererClick = (markerClusterer) => {
+    var clickedMarkers = markerClusterer.getMarkers();
+    if (clickedMarkers.length == 1) {
+      var marker = clickedMarkers[0];
+      this.setState({
+        windowOpen: true,
+        activeInd: marker.index,
+        showInfo: false
+      })
+    }
+  }
+
   MapComponent = () => {
     return (
       <GoogleMap
         defaultZoom={11}
         defaultCenter={{ lat: 36.9339, lng: -76.3637 }}
       >
+        <MarkerClusterer
+          onClick={this.onMarkerClustererClick}
+          averageCenter
+          enableRetinaIcons
+          gridSize={60}
+        >
         {this.state.data.map((report, index) => (
           <Marker
             key={index}
@@ -85,6 +104,8 @@ class Map extends React.Component {
             }}
           />
         ))}
+        </MarkerClusterer>
+
         {this.state.windowOpen && (
           <InfoWindow
             position={{
