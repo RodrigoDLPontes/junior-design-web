@@ -37,7 +37,6 @@ class Login extends React.Component {
     const password = this.state.password;
     try {
       await this.props.firebase.auth().signInWithEmailAndPassword(email, password);
-      this.props.history.push('map');
     } catch(error) {
       this.setState({ errorOccured: true });
     }

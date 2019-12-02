@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^7.3.0",
-    "react": "^16.11.0",
+    "react": "^16.12.0",
     "react-dom": "^16.11.0",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.1.2",
@@ -31,5 +31,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Visualization web app using React.js",
+  "main": "FirebaseKey.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodrigoDLPontes/junior-design-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RodrigoDLPontes/junior-design-web/issues"
+  },
+  "homepage": "https://github.com/RodrigoDLPontes/junior-design-web#readme"
 }

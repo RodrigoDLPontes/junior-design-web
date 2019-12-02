@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login';
 import Map from './Map';
 import Table from './Table';
+import Home from './Home';
 
 import * as firebase from 'firebase';
 import 'firebase/auth';
@@ -22,12 +23,14 @@ class App extends React.Component {
       storageBucket: "jr-design.appspot.com",
       messagingSenderId: "384307097591",
       appId: "1:384307097591:web:1da8b47f70cd8fab1ec8f2",
-      measurementId: "G-QVXX7D5HND"  
+      measurementId: "G-QVXX7D5HND"
     });
     firebase.auth().onAuthStateChanged((user) => {
       if(user) {
         // User had logged in
         this.setState({ authenticated: true });
+      } else {
+        this.setState({authenticated: false});
       }
     })
   }
@@ -44,6 +47,11 @@ class App extends React.Component {
           {this.state.authenticated &&
             <Route path="/table">
               <Table firebase={firebase}/>
+            </Route>
+          }
+          {this.state.authenticated &&
+            <Route path="/">
+                <Home firebase={firebase}/>
             </Route>
           }
           <Route path="/">

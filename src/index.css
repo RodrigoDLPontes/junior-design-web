@@ -12,6 +12,27 @@ code {
     monospace;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.home h1 {
+    font-size: 4em;
+}
+
+.home .options button {
+    width: 30%;
+    font-size: 1.5em;
+    margin: 1%;
+}
+
+.home .options {
+    width: 33%;
+}
+
 .login {
   display: flex;
   flex-direction: column;
