@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import * as firebase from 'firebase';
-
-import 'firebase/auth';
-import 'firebase/database';
 
 const checkmark = String.fromCharCode(10004);
 
