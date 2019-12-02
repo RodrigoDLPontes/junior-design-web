@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login';
 import Map from './Map';
 import Table from './Table';
+import Charts from './Charts';
 
 import * as firebase from 'firebase';
 import 'firebase/auth';
@@ -44,6 +45,11 @@ class App extends React.Component {
           {this.state.authenticated &&
             <Route path="/table">
               <Table firebase={firebase}/>
+            </Route>
+          }
+          {this.state.authenticated &&
+            <Route path="/charts">
+              <Charts firebase={firebase}/>
             </Route>
           }
           <Route path="/">
