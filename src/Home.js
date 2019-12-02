@@ -17,7 +17,12 @@ class Home extends React.Component {
               Table
             </button>
           </Link>
-          <button onClick={this.onClickSignout}>Signout</button>
+          <Link to="/charts">
+            <button>
+              Charts
+            </button>
+          </Link>
+          <button id="signout" onClick={this.onClickSignout}>Signout</button>
         </div>
       </div>
     );

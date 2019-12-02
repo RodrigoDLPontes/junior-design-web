@@ -26,11 +26,17 @@ code {
 .home .options button {
     width: 30%;
     font-size: 1.5em;
-    margin: 1%;
+    margin: 1.5%;
+}
+
+.home #signout {
+    width: 96%;
+    font-size: 1.5em;
+    margin: 1.5%;
 }
 
 .home .options {
-    width: 33%;
+    width: 30%;
 }
 
 .login {
