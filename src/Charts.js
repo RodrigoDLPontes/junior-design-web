@@ -11,10 +11,14 @@ const barChartOptions = {
 const lineChartOptions = {
   title: "Reports submitted over time",
   vAxis: { title: "Count"},
-  legend: "none"
+  legend: "none",
+  chartArea: {bottom:200}
 };
 
 const labels = {
+  "address": "Address",
+  "datetime": "Date",
+  "details": "Details",
   "home_abandoned": "Abandoned House",
   "home_bars": "Bars on Doors or Windows",
   "home_broken_windows": "Broken Windows",
